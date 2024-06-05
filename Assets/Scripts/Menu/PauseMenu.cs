@@ -48,8 +48,8 @@ public class PauseMenu : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        Time.timeScale = 1f;
-        pauseMenu.SetActive(false);
+/*        Time.timeScale = 1f;
+        pauseMenu.SetActive(false);*/
 
     }
 
