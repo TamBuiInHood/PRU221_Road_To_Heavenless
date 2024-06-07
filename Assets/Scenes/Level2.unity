@@ -38094,7 +38094,7 @@ GameObject:
   - component: {fileID: 536425096}
   - component: {fileID: 536425095}
   m_Layer: 0
-  m_Name: Carrot (1)
+  m_Name: Carrot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52536,7 +52536,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 107.5, y: 0}
+  m_AnchoredPosition: {x: 140, y: 0}
   m_SizeDelta: {x: 53.3383, y: 57.8548}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &920710201
