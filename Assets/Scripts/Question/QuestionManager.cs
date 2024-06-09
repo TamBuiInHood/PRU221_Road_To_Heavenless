@@ -10,9 +10,11 @@ public class QuestionManager : MonoBehaviour
     public TMP_Text questionText;
     public TMP_Text[] answerTexts;
     public Button[] answerButtons;
+    [SerializeField] private int value;
 
     private int correctAnswerIndex;
     private Vector3 playerStartPosition;
+    private ItemManager itemManager;
 
     void Awake()
     {
@@ -37,6 +39,13 @@ public class QuestionManager : MonoBehaviour
         else
         {
             Debug.LogError("Player GameObject not found.");
+        }
+
+        //item manager
+        itemManager = ItemManager.Instance;
+        if (itemManager == null)
+        {
+            Debug.LogError("ItemManager instance not found.");
         }
     }
 
@@ -81,6 +90,12 @@ public class QuestionManager : MonoBehaviour
             {
                 monster.SetActive(false);
             }
+
+            // Add reward value to the item manager
+            if (itemManager != null)
+            {
+                itemManager.ChangeItems(value);
+            }
         }
         else
         {
@@ -90,6 +105,12 @@ public class QuestionManager : MonoBehaviour
             if (player != null)
             {
                 player.transform.position = playerStartPosition;
+            }
+
+            GameObject monster = GameObject.FindGameObjectWithTag("Monster");
+            if (monster != null)
+            {
+                monster.SetActive(false);
             }
         }
         panelQuestion.SetActive(false); // Hide the panel after an answer is selected
