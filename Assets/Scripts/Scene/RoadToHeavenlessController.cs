@@ -4,7 +4,7 @@ using TMPro; // Add this namespace for TextMeshPro
 
 public class RoadToHeavenlessController : MonoBehaviour
 {
-    public GameObject loginPanel, signupPanel, profilePanel, menuPanel, notificationPanel, finishPanel;
+    public GameObject loginPanel, signupPanel, profilePanel, notificationPanel;
 
     public TMP_InputField loginUsername, loginPassword, signupUsername, signupPassword, signupCPassword;
 
@@ -18,8 +18,6 @@ public class RoadToHeavenlessController : MonoBehaviour
         loginPanel.SetActive(true);
         signupPanel.SetActive(false);
         profilePanel.SetActive(false);
-        menuPanel.SetActive(false);
-        finishPanel.SetActive(false);
     }
 
     public void OpenSignUpPanel()
@@ -27,8 +25,6 @@ public class RoadToHeavenlessController : MonoBehaviour
         loginPanel.SetActive(false);
         signupPanel.SetActive(true);
         profilePanel.SetActive(false);
-        menuPanel.SetActive(false);
-        finishPanel.SetActive(false);
     }
 
     public void OpenProfilePanel()
@@ -36,27 +32,7 @@ public class RoadToHeavenlessController : MonoBehaviour
         loginPanel.SetActive(false);
         signupPanel.SetActive(false);
         profilePanel.SetActive(true);
-        menuPanel.SetActive(false);
-        finishPanel.SetActive(false);
         profileUsername_Text.text = storedUsername; // Display the username in the profile panel
-    }
-
-    public void OpenMenuPanel()
-    {
-        loginPanel.SetActive(false);
-        signupPanel.SetActive(false);
-        profilePanel.SetActive(false);
-        menuPanel.SetActive(true);
-        finishPanel.SetActive(false);
-    }
-
-    public void OpenFinishPanel()
-    {
-        loginPanel.SetActive(false);
-        signupPanel.SetActive(false);
-        profilePanel.SetActive(false);
-        menuPanel.SetActive(false);
-        finishPanel.SetActive(true);
     }
 
     public void LoginUser()
@@ -121,15 +97,5 @@ public class RoadToHeavenlessController : MonoBehaviour
         profilePanel.SetActive(false);
         profileUsername_Text.text = "";
         OpenLoginPanel();
-    }
-
-    public void Menu()
-    {
-        OpenMenuPanel();
-    }
-
-    public void Finish()
-    {
-        OpenFinishPanel();
     }
 }

@@ -7,6 +7,17 @@ TagManager:
   - Ground
   - Trap
   - Monster
+  - Plant
+  - Plant1
+  - Plant2
+  - Plant3
+  - Snail
+  - Snail1
+  - Snail2
+  - Snail3
+  - Bee
+  - Bee1
+  - Bee2
   layers:
   - Default
   - TransparentFX
