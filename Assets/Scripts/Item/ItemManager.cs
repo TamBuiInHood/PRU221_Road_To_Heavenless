@@ -25,4 +25,9 @@ public class ItemManager : MonoBehaviour
     {
         items += amount;
     }
+
+    public int GetTotalItems()
+    {
+        return items;
+    }
 }
