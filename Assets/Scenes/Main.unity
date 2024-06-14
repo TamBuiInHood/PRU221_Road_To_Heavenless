@@ -2729,10 +2729,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 276837571}
-        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 5
+      - m_Target: {fileID: 1852910938}
+        m_TargetAssemblyTypeName: RoadToHeavenlessController, Assembly-CSharp
+        m_MethodName: OpenMenuPanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7594,6 +7594,7 @@ MonoBehaviour:
   loginPanel: {fileID: 2054296557}
   signupPanel: {fileID: 1150842918}
   profilePanel: {fileID: 480118020}
+  menuPanel: {fileID: 463347922}
   notificationPanel: {fileID: 1621872623}
   loginUsername: {fileID: 1611498929}
   loginPassword: {fileID: 318697021}
@@ -7603,7 +7604,6 @@ MonoBehaviour:
   notif_Title_Text: {fileID: 1668258615}
   notif_Message_Text: {fileID: 326729718}
   profileUsername_Text: {fileID: 21204537}
-  totalpoint_Text: {fileID: 0}
 --- !u!4 &1852910939
 Transform:
   m_ObjectHideFlags: 0

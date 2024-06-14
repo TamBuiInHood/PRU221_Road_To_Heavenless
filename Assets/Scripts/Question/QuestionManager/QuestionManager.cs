@@ -50,7 +50,7 @@ public class QuestionManager : MonoBehaviour
         }
     }
 
-    public void ShowQuestion(string question, string[] answers, int correctAnswer)
+    public void ShowQuestion(string question, string[] answers, int correctAnswer, GameObject gameObject)
     {
         if (panelQuestion != null)
         {
@@ -66,7 +66,7 @@ public class QuestionManager : MonoBehaviour
                     answerButtons[i].gameObject.SetActive(true);
                     int answerIndex = i; // Capture the index for the lambda closure
                     answerButtons[i].onClick.RemoveAllListeners(); // Remove previous listeners
-                    answerButtons[i].onClick.AddListener(() => OnClickAnswer(answerIndex));
+                    answerButtons[i].onClick.AddListener(() => OnClickAnswer(answerIndex, gameObject));
                 }
                 else
                 {
@@ -80,16 +80,14 @@ public class QuestionManager : MonoBehaviour
         }
     }
 
-    public void OnClickAnswer(int answerIndex)
+    public void OnClickAnswer(int answerIndex, GameObject gameObject)
     {
         if (answerIndex == correctAnswerIndex)
         {
             Debug.Log("Correct answer!");
-            // Make the "Monster" tagged GameObject disappear
-            GameObject monster = GameObject.FindGameObjectWithTag("Plant");
-            if (monster != null)
+            if (gameObject != null)
             {
-                monster.SetActive(false);
+               Destroy(gameObject);
             }
 
             // Add reward value to the item manager
@@ -108,10 +106,9 @@ public class QuestionManager : MonoBehaviour
                 player.transform.position = playerStartPosition;
             }
 
-            GameObject monster = GameObject.FindGameObjectWithTag("Plant");
-            if (monster != null)
+            if ( gameObject != null)
             {
-                monster.SetActive(false);
+                gameObject.SetActive(false);
             }
         }
         panelQuestion.SetActive(false); // Hide the panel after an answer is selected

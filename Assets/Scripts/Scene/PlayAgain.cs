@@ -9,6 +9,6 @@ public class PlayAgain : MonoBehaviour
     public void OnButtonClick(string sceneName)
     {
         // Load the scene with the given name
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 }
