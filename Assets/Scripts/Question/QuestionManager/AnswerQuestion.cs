@@ -5,6 +5,8 @@ public class AnswerQuestion : MonoBehaviour
     public string question;
     public string[] answers;
     public int correctAnswer; // Changed to string to match ShowQuestion parameter
+    public bool statusQuestion = false;
+    [SerializeField] public GameObject Enemy;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -12,7 +14,7 @@ public class AnswerQuestion : MonoBehaviour
         {
             if (QuestionManager.Instance != null)
             {
-                QuestionManager.Instance.ShowQuestion(question, answers, correctAnswer);
+                QuestionManager.Instance.ShowQuestion(question, answers, correctAnswer, Enemy);
             }
             else
             {

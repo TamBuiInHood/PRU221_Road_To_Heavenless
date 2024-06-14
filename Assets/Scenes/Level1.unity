@@ -1853,6 +1853,8 @@ MonoBehaviour:
   - A 2D image or texture
   - A physics component
   correctAnswer: 2
+  statusQuestion: 0
+  Enemy: {fileID: 114727185}
 --- !u!1 &120065211
 GameObject:
   m_ObjectHideFlags: 0
@@ -2557,6 +2559,122 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &173957428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 173957435}
+  - component: {fileID: 173957434}
+  - component: {fileID: 173957433}
+  - component: {fileID: 173957430}
+  - component: {fileID: 173957429}
+  - component: {fileID: 173957436}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &173957429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173957428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cef8bdd4e32489243b5c4da7fc2bec3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelQuestion: {fileID: 997867282}
+  questionText: {fileID: 1356326972}
+  answerTexts:
+  - {fileID: 1673418765}
+  - {fileID: 181878145}
+  - {fileID: 95207346}
+  - {fileID: 658429026}
+  answerButtons:
+  - {fileID: 1675107838}
+  - {fileID: 59717368}
+  - {fileID: 1528524715}
+  - {fileID: 1095308062}
+  value: 100
+--- !u!114 &173957430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173957428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e785e9790418be44ea87073606c8af7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 209261335}
+  currentTime: 0
+  countDown: 0
+--- !u!114 &173957433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173957428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072e87ad46b44fd4495febca252e8dee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 2129596065}
+  menuPanel: {fileID: 0}
+  pauseKey: 27
+--- !u!114 &173957434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173957428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64771de4a3e288545886d321d8517901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsDisplay: {fileID: 1125170574}
+--- !u!4 &173957435
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173957428}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.0929313, y: -5.6779437, z: -0.013539789}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &173957436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173957428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e20e83853d507a43871e435ecd64022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &176769248
 GameObject:
   m_ObjectHideFlags: 0
@@ -25861,6 +25979,8 @@ MonoBehaviour:
   - Sound source
   - Everything in the Unity game
   correctAnswer: 3
+  statusQuestion: 0
+  Enemy: {fileID: 517262829}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -45516,6 +45636,8 @@ MonoBehaviour:
   - To manage audio playback
   - To adjust lighting conditions
   correctAnswer: 1
+  statusQuestion: 0
+  Enemy: {fileID: 593223148}
 --- !u!114 &593223151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59327,135 +59449,6 @@ Transform:
   - {fileID: 1460984776}
   m_Father: {fileID: 307307693}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1452274278
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1452274280}
-  - component: {fileID: 1452274281}
-  - component: {fileID: 1452274282}
-  - component: {fileID: 1452274284}
-  - component: {fileID: 1452274283}
-  - component: {fileID: 1452274285}
-  - component: {fileID: 1452274286}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1452274280
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452274278}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0628576, y: -7.540671, z: -0.050524443}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1452274281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452274278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64771de4a3e288545886d321d8517901, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemsDisplay: {fileID: 1125170574}
---- !u!114 &1452274282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452274278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 072e87ad46b44fd4495febca252e8dee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 2129596065}
-  menuPanel: {fileID: 0}
-  pauseKey: 27
---- !u!114 &1452274283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452274278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cef8bdd4e32489243b5c4da7fc2bec3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panelQuestion: {fileID: 997867282}
-  questionText: {fileID: 1356326972}
-  answerTexts:
-  - {fileID: 1673418765}
-  - {fileID: 181878145}
-  - {fileID: 95207346}
-  - {fileID: 658429026}
-  answerButtons:
-  - {fileID: 1675107838}
-  - {fileID: 59717368}
-  - {fileID: 1528524715}
-  - {fileID: 1095308062}
-  value: 100
---- !u!114 &1452274284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452274278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d041174944453204bb1f8b34ea507d72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1452274285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452274278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e20e83853d507a43871e435ecd64022, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1452274286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452274278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e785e9790418be44ea87073606c8af7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerText: {fileID: 209261335}
-  currentTime: 0
-  countDown: 0
 --- !u!1 &1452639508
 GameObject:
   m_ObjectHideFlags: 0
@@ -61443,7 +61436,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1452274282}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToMainMenu
         m_Mode: 1
@@ -62088,6 +62081,8 @@ MonoBehaviour:
   - Console window
   - Inspector window
   correctAnswer: 0
+  statusQuestion: 0
+  Enemy: {fileID: 1613644971}
 --- !u!95 &1613644974
 Animator:
   serializedVersion: 5
@@ -70842,6 +70837,8 @@ MonoBehaviour:
   - Control character movement
   - Capture and display the game view
   correctAnswer: 3
+  statusQuestion: 0
+  Enemy: {fileID: 1759629296}
 --- !u!114 &1759629299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71961,7 +71958,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1452274282}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -73413,7 +73410,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1452274282}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
@@ -75674,5 +75671,5 @@ SceneRoots:
   - {fileID: 2147351992}
   - {fileID: 2015144475}
   - {fileID: 505749654}
-  - {fileID: 1452274280}
   - {fileID: 1790889203}
+  - {fileID: 173957435}
