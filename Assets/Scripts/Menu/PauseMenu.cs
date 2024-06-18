@@ -48,9 +48,8 @@ public class PauseMenu : MonoBehaviour
 
     public void GoToMainMenu()
     {
-/*        Time.timeScale = 1f;
-        pauseMenu.SetActive(false);*/
-
+        CurrentScreen.CurrentScreenPanel = 3;
+        SceneManager.LoadScene(0); 
     }
 
     public void QuitGame()
