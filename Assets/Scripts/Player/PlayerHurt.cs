@@ -39,7 +39,7 @@ public class PlayerHurt : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Trap"))
+        if (collision.gameObject.CompareTag("Trap") || collision.gameObject.CompareTag("Monster"))
         {
             ApplyKnockback(collision.gameObject.transform.position.x);
             StartCoroutine(RespawnAfterDelay());

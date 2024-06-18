@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEditor.Experimental.GraphView;
 
 public class QuestionManager : MonoBehaviour
 {
@@ -16,6 +15,7 @@ public class QuestionManager : MonoBehaviour
     private int correctAnswerIndex;
     private Vector3 playerStartPosition;
     private ItemManager itemManager;
+    private PlayerMovement playerMovement;
 
     void Awake()
     {
@@ -36,13 +36,14 @@ public class QuestionManager : MonoBehaviour
         if (player != null)
         {
             playerStartPosition = player.transform.position;
+            playerMovement = player.GetComponent<PlayerMovement>(); // Get the PlayerMovement component
         }
         else
         {
             Debug.LogError("Player GameObject not found.");
         }
 
-        //item manager
+        // Item manager
         itemManager = ItemManager.Instance;
         if (itemManager == null)
         {
@@ -57,6 +58,12 @@ public class QuestionManager : MonoBehaviour
             panelQuestion.SetActive(true);
             questionText.text = question;
             correctAnswerIndex = correctAnswer;
+
+            // Disable player movement
+            if (playerMovement != null)
+            {
+                playerMovement.enabled = false;
+            }
 
             for (int i = 0; i < answerTexts.Length; i++)
             {
@@ -87,7 +94,7 @@ public class QuestionManager : MonoBehaviour
             Debug.Log("Correct answer!");
             if (gameObject != null)
             {
-               Destroy(gameObject);
+                Destroy(gameObject);
             }
 
             // Add reward value to the item manager
@@ -106,11 +113,18 @@ public class QuestionManager : MonoBehaviour
                 player.transform.position = playerStartPosition;
             }
 
-            if ( gameObject != null)
+            if (gameObject != null)
             {
                 gameObject.SetActive(false);
             }
         }
+
+        // Re-enable player movement
+        if (playerMovement != null)
+        {
+            playerMovement.enabled = true;
+        }
+
         panelQuestion.SetActive(false); // Hide the panel after an answer is selected
     }
 }
