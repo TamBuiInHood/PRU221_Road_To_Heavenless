@@ -24,6 +24,7 @@ public class ItemManager : MonoBehaviour
     public void ChangeItems(int amount)
     {
         items += amount;
+        Debug.Log($"item: {items}");
     }
 
     public int GetTotalItems()
