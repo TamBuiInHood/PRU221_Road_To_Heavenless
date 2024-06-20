@@ -1,21 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
-public class SceneController : MonoBehaviour
+public class SceneController
 {
-    public static SceneController instance;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            // Destroy duplicate instances of SceneController
-            Destroy(gameObject);
-        }
-    }
+    public static int Point;
+    public static float Timer;
 }

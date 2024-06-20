@@ -18,17 +18,17 @@ public class ItemManager : MonoBehaviour
 
     private void OnGUI()
     {
-        itemsDisplay.text = items.ToString();
+        itemsDisplay.text = SceneController.Point.ToString();
     }
 
     public void ChangeItems(int amount)
     {
-        items += amount;
-        Debug.Log($"item: {items}");
+        SceneController.Point += amount;
+        Debug.Log($"item: {SceneController.Point}");
     }
 
     public int GetTotalItems()
     {
-        return items;
+        return SceneController.Point;
     }
 }
