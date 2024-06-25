@@ -8,7 +8,6 @@ public class PlayerHurt : MonoBehaviour
     private PlayerMovement playerMovement;
     private Animator anim;
     private Rigidbody2D rb;
-    [SerializeField] private float hurtForce = 10f;
     private PhysicsMaterial2D originalMaterial;
 
     void Start()
@@ -58,15 +57,16 @@ public class PlayerHurt : MonoBehaviour
 
     void ApplyKnockback(float otherPositionX)
     {
+        rb.sharedMaterial = null; // Disable friction for knockback
+
+        float knockbackForce = 10f; // Adjust this value as needed
         if (otherPositionX > transform.position.x)
         {
-            rb.sharedMaterial = null;
-            rb.velocity = new Vector2(-hurtForce, rb.velocity.y);
+            rb.velocity = new Vector2(-knockbackForce, rb.velocity.y);
         }
         else
         {
-            rb.sharedMaterial = null;
-            rb.velocity = new Vector2(hurtForce, rb.velocity.y);
+            rb.velocity = new Vector2(knockbackForce, rb.velocity.y);
         }
     }
 
@@ -87,8 +87,6 @@ public class PlayerHurt : MonoBehaviour
         transform.position = startPosition;
 
         rb.sharedMaterial = originalMaterial;
-
-        yield return new WaitForSeconds(respawnDelay);
 
         if (playerMovement != null)
         {

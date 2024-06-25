@@ -4,59 +4,73 @@ using TMPro; // Add this namespace for TextMeshPro
 
 public class RoadToHeavenlessController : MonoBehaviour
 {
-    public GameObject loginPanel, signupPanel, profilePanel, menuPanel, notificationPanel, finishPanel;
+    public GameObject loginPanel, signupPanel, profilePanel, menuPanel, notificationPanel;
 
     public TMP_InputField loginUsername, loginPassword, signupUsername, signupPassword, signupCPassword;
 
-    public TMP_Text notif_Title_Text, notif_Message_Text, profileUsername_Text, totalpoint_Text;
+    public TMP_Text notif_Title_Text, notif_Message_Text, profileUsername_Text;
+
+    public int currentScreen = CurrentScreen.CurrentScreenPanel;
+
 
     private string storedUsername;
     private string storedPassword;
 
-    public void OpenLoginPanel()
+    private void Start()
     {
-        loginPanel.SetActive(true);
+        currentScreen = CurrentScreen.CurrentScreenPanel;
+        switch (currentScreen)
+        {
+            case 0:
+                OpenLoginPanel();
+                break;
+            case 1:
+                OpenSignUpPanel();
+                break;
+            case 2:
+                OpenProfilePanel();
+                break;
+            case 3:
+                OpenMenuPanel();
+                break;
+        }
+    }
+
+    public void ResetPanel()
+    {
+        loginPanel.SetActive(false);
         signupPanel.SetActive(false);
         profilePanel.SetActive(false);
         menuPanel.SetActive(false);
-        finishPanel.SetActive(false);
+    }
+
+    public void OpenLoginPanel()
+    {
+        currentScreen = 0;
+        ResetPanel();
+        loginPanel.SetActive(true);
     }
 
     public void OpenSignUpPanel()
     {
-        loginPanel.SetActive(false);
+        currentScreen = 1;
+        ResetPanel();
         signupPanel.SetActive(true);
-        profilePanel.SetActive(false);
-        menuPanel.SetActive(false);
-        finishPanel.SetActive(false);
     }
 
     public void OpenProfilePanel()
     {
-        loginPanel.SetActive(false);
-        signupPanel.SetActive(false);
+        currentScreen = 2;
+        ResetPanel();
         profilePanel.SetActive(true);
-        menuPanel.SetActive(false);
-        finishPanel.SetActive(false);
         profileUsername_Text.text = storedUsername; // Display the username in the profile panel
     }
 
     public void OpenMenuPanel()
     {
-        loginPanel.SetActive(false);
-        signupPanel.SetActive(false);
-        profilePanel.SetActive(false);
+        currentScreen = 3;
+        ResetPanel();
         menuPanel.SetActive(true);
-        finishPanel.SetActive(false);
-    }
-
-    public void OpenFinishPanel()
-    {
-        loginPanel.SetActive(false);
-        signupPanel.SetActive(false);
-        profilePanel.SetActive(false);
-        menuPanel.SetActive(false);
-        finishPanel.SetActive(true);
     }
 
     public void LoginUser()
@@ -127,9 +141,6 @@ public class RoadToHeavenlessController : MonoBehaviour
     {
         OpenMenuPanel();
     }
-
-    public void Finish()
-    {
-        OpenFinishPanel();
-    }
 }
+
+

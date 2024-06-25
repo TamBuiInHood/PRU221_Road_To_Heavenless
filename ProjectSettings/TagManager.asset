@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - Trap
+  - Monster
+  - Plant
+  - Snail
+  - Bee
   layers:
   - Default
   - TransparentFX
